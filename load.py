@@ -6,9 +6,9 @@ import numpy as np
 import os
 
 #Load .csv renewables data into GANs model
-#Currently use power generation historical data from NREL
+#Currently use power generation historical data from NREL, which can be downloaded from NREL wind or solar integration datasets
 #Historical data are loaded by column sequence and reshape into model input shape, which is adjustable
-#label is only useful for event-based scenario generation
+#Label is only useful for event-based scenario generation
 
 def load_wind():
     #data created on July 8th, WA 66 wind farms
