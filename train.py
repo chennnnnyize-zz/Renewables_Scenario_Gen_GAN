@@ -1,3 +1,7 @@
+#The main training function
+#For event-based scenario generation and spatial scenario generation, implement the code with labels or 
+#reshape the imput samples to spatio-temporal samples respectively.
+
 #import ipdb
 import os
 import pandas as pd
