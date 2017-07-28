@@ -1,17 +1,11 @@
 This repository contains code for the paper "Model-Free Renewables Scenario Generation Using Generative Adversarial Networks"
 
-## Convergent Learning: Do different neural networks learn the same representations?
+# Model-Free Renewables Scenario Generation Using Generative Adversarial Networks
 
 This repository contains source code necessary to reproduce the results presented in the following paper:
 
-```
-@inproceedings{li_2016_ICLR
-  title={Convergent Learning: Do different neural networks learn the same representations?},
-  author={Li, Yixuan and Yosinski, Jason and Clune, Jeff and Lipson, Hod and Hopcroft, John},
-  booktitle={International Conference on Learning Representation (ICLR '16)},
-  year={2016}
-}
-```
+Model-Free Renewables Scenario Generation Using Generative Adversarial Networks
+by Yize Chen, Yishen Wang, Daniel Kirschen and Baosen Zhang
 
 ## Assemble prerequisites
 
@@ -39,4 +33,4 @@ _Shortcut: to skip all the work and just see the results, take a look at [this n
 
 ## Questions?
 
-Please drop [me](http://www.cs.cornell.edu/~yli) a line if you have any questions!
+Please email [me](http://blogs.uw.edu/yizechen/) at yizechen@uw.edu if you have any questions!
