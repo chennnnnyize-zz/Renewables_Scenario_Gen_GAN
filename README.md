@@ -14,25 +14,14 @@ In this project, we proposed to use the set of generative model, Generative Adve
 
 ## Language and Dependencies
 
-We used [Tensorflow](https://www.tensorflow.org/) to train the models
+We used Python to implement the algorithm. Some data processing work was finished in Matlab. Specifically, we used the open-source Python package [Tensorflow](https://www.tensorflow.org/) to train the neural network models.
 
-To run through the demo, you need installing the standard packages of IPython, numpy, sklearn and matplotlib packages. Depending on your setup, it may be possible to install these via `pip install ipython numpy matplotlib networkx sklearn`.
+To run the code, you need installing the standard packages of numpy, pandas, ipdb and matplotlib. In Linux, you can install these packages via `pip install numpy pandas ipdb matplotlib`.
 
 
-## Run experiments with pre-computed statistics
+## Run Experiments with Pre-Processed Datasets
 
-Once the data folder is downloaded, the results can be reproduced using the included IPython notebook `experiments/convergent_learning_notebook.ipynb`.
-Start the IPython Notebook server:
-
-```
-$ cd experiments
-$ ipython notebook
-```
-
-Select the `convergent_learning_notebook.ipynb` notebook and execute the included
-code. 
-
-_Shortcut: to skip all the work and just see the results, take a look at [this notebook with cached plots](http://nbviewer.jupyter.org/github/yixuanli/convergent_learning/blob/master/experiments/convergent_learning_notebook.ipynb)._
+To reproduce the results shown in paper, we also updated the three datasets, which corresponding to wind scenario generation, solar scenario generation and wind spatio-temporal scenario generation. Labels are added to each training sample by given events (e.g., wind'sample's mean value, solar sample's month). All datasets in these paper are produced from NREL wind
 
 
 
