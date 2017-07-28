@@ -12,6 +12,9 @@ Engineers need an efficient and scalable technique to capture and model the dyna
 
 In this project, we proposed to use the set of generative model, Generative Adversarial Networks, to bring out a data-driven solution for scenario generation problem. 
 
+## Generated Samples
+![alt text](https://github.com/chennnnnyize/Renewables_Scenario_Gen_GAN/blob/master/datasets/samples.png)
+
 ## Language and Dependencies
 
 We used Python to implement the algorithm. Some data processing work was finished in Matlab. Specifically, we used the open-source Python package [Tensorflow](https://www.tensorflow.org/) to train the neural network models.
@@ -21,9 +24,13 @@ To run the code, you need installing the standard packages of numpy, pandas, ipd
 
 ## Run Experiments with Pre-Processed Datasets
 
-To reproduce the results shown in paper, we also updated the three datasets, which corresponding to wind scenario generation, solar scenario generation and wind spatio-temporal scenario generation. Labels are added to each training sample by given events (e.g., wind'sample's mean value, solar sample's month). All datasets in these paper are produced from NREL wind
+Datasets: To reproduce the results shown in paper, we also updated the three datasets, which corresponding to wind scenario generation, solar scenario generation and wind spatio-temporal scenario generation. Labels are added to each training sample by given events (e.g., wind'sample's mean value, solar sample's month). All datasets in these paper are produced from NREL wind
 
-
+Run the experiments: 
+We have three modes provided for users:
+a) Temporal Scenario Generations:
+b) Spatio-Temporal Scenario Generations:
+c) Event-based Scenario Generations
 
 ## Questions?
 
