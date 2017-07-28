@@ -49,7 +49,7 @@ class GAN():
             batch_size=32,
             image_shape=[24,24,1],
             dim_z=100,
-            dim_y=12,
+            dim_y=6, #The parameters for controlling the number of events
             dim_W1=1024,
             dim_W2=128,
             dim_W3=64,
