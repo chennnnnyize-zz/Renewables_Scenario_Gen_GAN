@@ -1,5 +1,3 @@
-This repository contains code for the paper "Model-Free Renewables Scenario Generation Using Generative Adversarial Networks"
-
 # Model-Free Renewables Scenario Generation Using Generative Adversarial Networks
 
 This repository contains source code necessary to reproduce the results presented in the following paper:
@@ -7,11 +5,18 @@ This repository contains source code necessary to reproduce the results presente
 Model-Free Renewables Scenario Generation Using Generative Adversarial Networks
 by Yize Chen, Yishen Wang, Daniel Kirschen and Baosen Zhang
 
-## Assemble prerequisites
+This repository can be used for general scenario-generation 
 
- We used [Caffe](http://caffe.berkeleyvision.org/) to train the models, and computed necessary statistics including pair-wise unit correlations, unit activation mean, pair-wise unit mutual information etc. In this demo, to minimize the effort for you to try out the fun experiments, we have provided a link for you to download all the necessities (pre-trained models, unit statistics, unit visualizations, pre-trained sparse prediction models). 
+## Motivation
+Engineers need an efficient and scalable technique to capture and model the dynamics of time-series scenarios as well as spatio-temporal scenarios for renewables generation process. Traditional model-based methods are proposed with many model assumptions, while on the other side these models are hard to scale into power generation process at different locations.
 
-To run through the demo, you only need the standard packages of IPython, numpy, [networkx](http://networkx.github.io), sklearn and matplotlib packages. Depending on your setup, it may be possible to install these via `pip install ipython numpy matplotlib networkx sklearn`.
+In this project, we proposed to use the set of generative model, Generative Adversarial Networks, to bring out a data-driven solution for scenario generation problem. 
+
+## Language and Dependencies
+
+We used [Tensorflow](https://www.tensorflow.org/) to train the models
+
+To run through the demo, you need installing the standard packages of IPython, numpy, sklearn and matplotlib packages. Depending on your setup, it may be possible to install these via `pip install ipython numpy matplotlib networkx sklearn`.
 
 
 ## Run experiments with pre-computed statistics
