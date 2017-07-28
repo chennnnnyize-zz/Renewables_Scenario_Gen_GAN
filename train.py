@@ -9,7 +9,7 @@ import numpy as np
 from model_wgan_orig import *
 #from model_wgan_orig import *
 from util import *
-from load import load_wind
+from load import load_wind, load_solar, load_spatial
 from numpy import shape
 import csv
 import matplotlib.pyplot as plt
@@ -30,9 +30,15 @@ generated_dim=500
 
 #trX=load_wind_data()
 #trX,maximum=load_solar_data()
+#Comment out corresponding part to reproduce the results for 
+#wind_events_generation, solar_events_generation, spatial_generation respectively
+
 trX, trY=load_wind()
+#trX, trY=load_solar()
+#trX, trY=load_spatial()
+
 print("shape of training samples ", shape(trX))
-print("Wind data loaded")
+print("Training data loaded")
 
 dcgan_model = GAN(
     #dim_z: the dimension for input noise
