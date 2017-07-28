@@ -11,7 +11,8 @@ import os
 #Label is only useful for event-based scenario generation
 
 def load_wind():
-    #data created on July 8th, WA 66 wind farms
+    #Example dataset created for conditional GANs wind scenarios generation
+    #
     with open('new.csv', 'r') as csvfile:
         reader = csv.reader(csvfile)
         rows = [row for row in reader]
