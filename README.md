@@ -5,7 +5,7 @@ This repository contains source code necessary to reproduce the results presente
 Model-Free Renewables Scenario Generation Using Generative Adversarial Networks
 by Yize Chen, Yishen Wang, Daniel Kirschen and Baosen Zhang
 
-This repository can be used for general scenario-generation 
+The method shown in this repository can be used for general scenario-generation problems in power systems. 
 
 ## Motivation
 Engineers need an efficient and scalable technique to capture and model the dynamics of time-series scenarios as well as spatio-temporal scenarios for renewables generation process. Traditional model-based methods are proposed with many model assumptions, while on the other side these models are hard to scale into power generation process at different locations.
