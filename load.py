@@ -5,15 +5,15 @@ sys.path.append('..')
 import numpy as np
 import os
 
-#Load .csv or .txt renewables data into GANs model
+#Load .csv renewables data into GANs model
 #Currently use power generation historical data from NREL, which can be downloaded from NREL wind or solar integration datasets
 #Historical data are loaded by column sequence and reshape into model input shape, which is adjustable
 #Label is only useful for event-based scenario generation
 
 def load_wind():
-    #Example dataset created for conditional GANs wind scenarios generation
-    #
-    with open('new.csv', 'r') as csvfile:
+    #Example dataset created for evnet_based GANs wind scenarios generation
+    # Data from NREL wind integrated datasets
+    with open('wind.csv', 'r') as csvfile:
         reader = csv.reader(csvfile)
         rows = [row for row in reader]
     rows = np.array(rows, dtype=float)
@@ -31,7 +31,7 @@ def load_wind():
             trX = train
         else:
             trX = np.concatenate((trX, train), axis=0)
-    print("Shape TrX", shape(trX))
+    print("Shape TrX", shape(trX))conditional
 
     with open('wind label.csv', 'r') as csvfile:
         reader = csv.reader(csvfile)
@@ -40,6 +40,7 @@ def load_wind():
     label=label.T
     print("Label shape", shape(label))
     return trX, label
+
 
 def load_wind_data_spatial():
     with open('spatial.csv', 'r') as csvfile:
@@ -53,7 +54,7 @@ def load_wind_data_spatial():
 
 
 def load_solar_data():
-    with open('solar_label.csv', 'r') as csvfile:
+    with open('solar label.csv', 'r') as csvfile:
         reader = csv.reader(csvfile)
         rows = [row for row in reader]
     labels = np.array(rows, dtype=int)
