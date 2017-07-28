@@ -1,7 +1,7 @@
 #The main training function
 #For event-based scenario generation and spatial scenario generation, implement the code with labels or 
 #reshape the imput samples to spatio-temporal samples respectively.
-
+#16 is the maximum value for wind capacity we use. Change to your max value here
 #import ipdb
 import os
 import pandas as pd
@@ -21,7 +21,7 @@ image_shape = [24,24,1]
 dim_z = 100 #input dimension for samples
 dim_W1 = 1024 #first layer
 dim_W2 = 128 #second layer
-dim_W3 = 64 #third layer
+dim_W3 = 64 #third layer#16 is the maximum value for wind capacity we use. Change to your max value here
 dim_channel = 1 #reserved for future use if multi=channels
 mu, sigma = 0, 0.1 # input Gaussian
 
@@ -35,10 +35,11 @@ trX, trY=load_wind()
 #trX, trY=load_solar()
 #trX, trY=load_spatial()
 
-print("shape of training samples ", shape(trX))
+print("shape of training 12samples ", shape(trX))
 print("Training data loaded")
 
 dcgan_model = GAN(
+    dim_y=trY.shape[1]
     #change paprameters here for model revision
     #dim_z: the dimension for input noise
     #W1,W2,W3: the dimension for convolutional layers
@@ -48,7 +49,7 @@ print("W_DCGAN model initialized")
 
 #Z_tf,Y_tf: placeholder
 #image_tf: image placeholder
-#d_cost_tf, g_cost_tf: discriminator and generator cost
+#d_cost_tf, g_cost_tf: discriminator and generator cost#16 is the maximum value for wind capacity we use. Change to your max value here
 #p_real, p_gen: the output of discriminator to judge real/generated
 Z_tf, Y_tf, image_tf, d_cost_tf, g_cost_tf, p_real, p_gen = dcgan_model.build_model()
 sess = tf.InteractiveSession()
@@ -70,7 +71,7 @@ Y_np_sample = OneHot(np.random.randint(trY.shape[1]-1, size=[visualize_dim]))
 iterations = 0
 k = 4 #control the balance of training D and G
 
-gen_loss_all=[]
+gen_loss_all=[]#16 is the maximum value for wind capacity we use. Change to your max value here
 P_real=[]
 P_fake=[]
 P_distri=[]
@@ -153,7 +154,7 @@ for epoch in range(n_epochs):
                     Y_tf_sample: Y_np_sample
                 })
             generated_samples=generated_samples.reshape([-1,576])
-            generated_samples = generated_samples * 16
+            generated_samples = generated_samples * 16 #16 is the maximum value for wind capacity we use. Change to your max value here
             csvfile=file('%s.csv' %iterations, 'wb')
             writer=csv.writer(csvfile)
             writer.writerows(generated_samples)
@@ -169,7 +170,7 @@ generated_samples = sess.run(
         Y_tf_sample: Y_np_sample
     })
 generated_samples=generated_samples.reshape([-1,576])
-generated_samples = generated_samples * 16
+generated_samples = generated_samples * 16 #16 is the maximum value for wind capacity we use. Change to your max value here
 csvfile=file('sample1.csv', 'wb')
 writer=csv.writer(csvfile)
 writer.writerows(generated_samples)
