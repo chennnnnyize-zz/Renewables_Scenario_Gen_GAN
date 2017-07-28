@@ -14,25 +14,23 @@ from numpy import shape
 import csv
 import matplotlib.pyplot as plt
 
-n_epochs = 70
-learning_rate = 0.0002
+n_epochs = 70 #Number of overall training epochs on training data
+learning_rate = 0.0002 
 batch_size = 32
 image_shape = [24,24,1]
-dim_z = 100
-dim_W1 = 1024
-dim_W2 = 128
-dim_W3 = 64
-dim_channel = 1
-mu, sigma = 0, 0.1
+dim_z = 100 #input dimension for samples
+dim_W1 = 1024 #first layer
+dim_W2 = 128 #second layer
+dim_W3 = 64 #third layer
+dim_channel = 1 #reserved for future use if multi=channels
+mu, sigma = 0, 0.1 # input Gaussian
 
 visualize_dim=32
-generated_dim=500
+generated_dim=32
 
-#trX=load_wind_data()
-#trX,maximum=load_solar_data()
+
 #Comment out corresponding part to reproduce the results for 
 #wind_events_generation, solar_events_generation, spatial_generation respectively
-
 trX, trY=load_wind()
 #trX, trY=load_solar()
 #trX, trY=load_spatial()
@@ -41,6 +39,7 @@ print("shape of training samples ", shape(trX))
 print("Training data loaded")
 
 dcgan_model = GAN(
+    #change paprameters here for model revision
     #dim_z: the dimension for input noise
     #W1,W2,W3: the dimension for convolutional layers
         )
@@ -67,7 +66,7 @@ Z_tf_sample, Y_tf_sample, image_tf_sample = dcgan_model.samples_generator(batch_
 tf.initialize_all_variables().run()
 
 Zs = np.random.normal(mu, sigma, size=[batch_size, dim_z]).astype(np.float32)
-Y_np_sample = OneHot(np.random.randint(5, size=[visualize_dim]))
+Y_np_sample = OneHot(np.random.randint(trY.shape[1]-1, size=[visualize_dim]))
 iterations = 0
 k = 4 #control the balance of training D and G
 
