@@ -24,7 +24,7 @@ To run the code, you need installing the standard packages of numpy, pandas, ipd
 
 ## Run Experiments with Pre-Processed Datasets
 
-Datasets: To reproduce the results shown in paper, we also updated the three datasets, which corresponding to wind scenario generation, solar scenario generation and wind spatio-temporal scenario generation. Labels are added to each training sample by given events (e.g., wind'sample's mean value, solar sample's month). All datasets in these paper are produced from NREL wind
+Datasets: To reproduce the results shown in paper, we also updated the three datasets, which corresponding to wind scenario generation, solar scenario generation and wind spatio-temporal scenario generation. Labels are added to each training sample by given events (e.g., wind'sample's mean value, solar sample's month). All datasets in these paper are produced from [NREL Wind Integration Datasets](https://www.nrel.gov/grid/wind-integration-data.html) and [NREL Solar Integration Datasets](https://www.nrel.gov/grid/solar-power-data.html).
 
 Run the experiments: 
 Please downloads all the .py files in a same folder, and experimental data in a folder "dataset" under the same parent folder.
@@ -34,9 +34,11 @@ Please downloads all the .py files in a same folder, and experimental data in a 
 "load.py" connects datasets to our model.
 
 We have three modes provided for users:
-a) Temporal Scenario Generations: 
-b) Spatio-Temporal Scenario Generations:
-c) Event-based Scenario Generations
+a) Temporal Scenario Generations; 
+
+b) Spatio-Temporal Scenario Generations;
+
+c) Event-based Scenario Generations;
 
 To run experiment, run "train.py" in your Python IDE or in command line "python train.py", and type in the model as "temporal", "spatio-temporal" or "event". The training code will automatically the corresponding datasets provided in our example and train the model. After training comlete, it will generate a group of generated scenarios along with the training loss evolution.
 
