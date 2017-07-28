@@ -42,7 +42,7 @@ b) Spatio-Temporal Scenario Generations;
 
 c) Event-based Scenario Generations;
 
-To run experiment, run "train.py" in your Python IDE or in command line "python train.py", and type in the model as "temporal", "spatio-temporal" or "event". The training code will automatically the corresponding datasets provided in our example and train the model. After training comlete, it will generate a group of generated scenarios along with the training loss evolution.
+To run experiment, run "train.py" in your Python IDE or in command line "python train.py", and select running mode as "temporal", "spatio-temporal" or "event". For temporal and event-based scenario generation, we provide example datasets with 5-minute time resolution, while for spatio-temporal scenario generation, a dataset to generate 24-site 1-day scenarios with 1-hour resolution is applied. Once training comletes, it will generate a group of generated scenarios along with the training loss evolution.
 
 ## Scenarios Evaluation
 
