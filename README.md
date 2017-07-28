@@ -13,6 +13,7 @@ Engineers need an efficient and scalable technique to capture and model the dyna
 In this project, we proposed to use the set of generative model, Generative Adversarial Networks, to bring out a data-driven solution for scenario generation problem. 
 
 ## Generated Samples
+Here we show some generated samples along with samples' autocorrelation
 ![alt text](https://github.com/chennnnnyize/Renewables_Scenario_Gen_GAN/blob/master/datasets/samples.png)
 
 ## Language and Dependencies
@@ -34,6 +35,7 @@ Please downloads all the .py files in a same folder, and experimental data in a 
 "load.py" connects datasets to our model.
 
 We have three modes provided for users:
+
 a) Temporal Scenario Generations; 
 
 b) Spatio-Temporal Scenario Generations;
@@ -41,6 +43,15 @@ b) Spatio-Temporal Scenario Generations;
 c) Event-based Scenario Generations;
 
 To run experiment, run "train.py" in your Python IDE or in command line "python train.py", and type in the model as "temporal", "spatio-temporal" or "event". The training code will automatically the corresponding datasets provided in our example and train the model. After training comlete, it will generate a group of generated scenarios along with the training loss evolution.
+
+## Scenarios Evaluation
+
+To evaluate if generated scenarios are good enough, we suggest two methods to use:
+
+a) Check the loss function, which is the metric we used during training. A converged loss to small value shall indicate good quality of generated scenarios.
+![alt text](https://github.com/chennnnnyize/Renewables_Scenario_Gen_GAN/blob/master/datasets/loss.png)
+
+b) Check scenarios' statistical properties, and compare the results with historical records.
 
 ## Questions?
 
