@@ -24,6 +24,7 @@ dim_W2 = 128 #second layer
 dim_W3 = 64 #third layer#16 is the maximum value for wind capacity we use. Change to your max value here
 dim_channel = 1 #reserved for future use if multi=channels
 mu, sigma = 0, 0.1 # input Gaussian
+events_num=5 #kind of events
 
 visualize_dim=32
 generated_dim=32
@@ -35,11 +36,11 @@ trX, trY=load_wind()
 #trX, trY=load_solar()
 #trX, trY=load_spatial()
 
-print("shape of training 12samples ", shape(trX))
+print("shape of training samples ", shape(trX))
 print("Training data loaded")
 
 dcgan_model = GAN(
-    dim_y=trY.shape[1]
+    dim_y=events_num # Change parameters based on number of events
     #change paprameters here for model revision
     #dim_z: the dimension for input noise
     #W1,W2,W3: the dimension for convolutional layers
@@ -67,7 +68,7 @@ Z_tf_sample, Y_tf_sample, image_tf_sample = dcgan_model.samples_generator(batch_
 tf.initialize_all_variables().run()
 
 Zs = np.random.normal(mu, sigma, size=[batch_size, dim_z]).astype(np.float32)
-Y_np_sample = OneHot(np.random.randint(trY.shape[1]-1, size=[visualize_dim]))
+Y_np_sample = OneHot(np.random.randint(trY.shape[1]-1, size=[visualize_dim]), n=events_num)
 iterations = 0
 k = 4 #control the balance of training D and G
 
@@ -85,7 +86,7 @@ for epoch in range(n_epochs):
     np.random.shuffle(index)
     trX = trX[index]
     trY = trY[index]
-    trY2 = OneHot(trY)
+    trY2 = OneHot(trY, n=events_num)
 
     for start, end in zip(
             range(0, len(trY), batch_size),
@@ -113,8 +114,6 @@ for epoch in range(n_epochs):
             print("iteration:", iterations)
             print("gen loss:", gen_loss_val)
             print("discrim loss:", discrim_loss_val)
-            #print("gen loss:", gen_loss_val)
-
 
         else:
             _, discrim_loss_val = sess.run(
@@ -145,7 +144,7 @@ for epoch in range(n_epochs):
             print("Average P(real)=", p_real_val.mean())
             print("Average P(gen)=", p_gen_val.mean())
             print("Discrim loss:", discrim_loss_val)
-            Y_np_sample = OneHot(np.random.randint(5, size=[visualize_dim]))
+            Y_np_sample = OneHot(np.random.randint(5, size=[visualize_dim]), n=events_num)
             Z_np_sample = np.random.normal(mu, sigma, size=[batch_size, dim_z]).astype(np.float32)
             generated_samples = sess.run(
                 image_tf_sample,
@@ -161,7 +160,7 @@ for epoch in range(n_epochs):
 
         iterations += 1
 
-Y_np_sample = OneHot(np.random.randint(5, size=[visualize_dim]))
+Y_np_sample = OneHot(np.random.randint(5, size=[visualize_dim]), n=events_num) 
 Zs = np.random.normal(mu, sigma, size=[batch_size, dim_z]).astype(np.float32)
 generated_samples = sess.run(
     image_tf_sample,
