@@ -178,7 +178,7 @@ writer=csv.writer(csvfile)
 writer.writerows(Y_np_sample)
 
 
-
+#plot the loss and P_real as well as P_fake
 print("P_real",P_real)
 print("P_fake",P_fake)
 
