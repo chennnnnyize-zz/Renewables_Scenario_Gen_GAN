@@ -7,7 +7,7 @@ from numpy import shape
 
 #Some helper functions
 
-def OneHot(X, n=12, negative_class=0.):
+def OneHot(X, n, negative_class=0.):
     X = np.asarray(X).flatten()
     if n is None:
         n = np.max(X) + 1
