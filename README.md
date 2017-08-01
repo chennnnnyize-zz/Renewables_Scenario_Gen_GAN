@@ -3,7 +3,7 @@
 This repository contains source code necessary to reproduce the results presented in the following paper:
 
 [Model-Free Renewables Scenario Generation Using Generative Adversarial Networks](https://arxiv.org/abs/1707.09676)
-by Yize Chen, Yishen Wang, Daniel Kirschen and Baosen Zhang
+by Yize Chen, Yishen Wang, Daniel Kirschen and Baosen Zhang, submitted to IEEE Transaction on Power Systems, Special Section on Enabling very high penetration renewable energy integration into future power systems 
 
 The method shown in this repository can be used for general scenario-generation problems in power systems. 
 
@@ -20,7 +20,7 @@ Here we show some generated samples along with samples' autocorrelation
 
 We used Python to implement the algorithm. Some data processing work was finished in Matlab. Specifically, we used the open-source Python package [Tensorflow](https://www.tensorflow.org/) to train the neural network models.
 
-To run the code, you need installing the standard packages of numpy, pandas, ipdb and matplotlib. In Linux, you can install these packages via `pip install numpy pandas ipdb matplotlib`.
+To run the code, you need installing the standard packages of numpy, pandas, ipdb and matplotlib. In Linux, you can install these packages via `pip install numpy pandas ipdb matplotlib`. For windows, follow [these instructions](https://www.tensorflow.org/install/install_windows). 
 
 
 ## Run Experiments with Pre-Processed Datasets
@@ -42,7 +42,7 @@ b) Spatio-Temporal Scenario Generations;
 
 c) Event-based Scenario Generations;
 
-To run experiment, run "train.py" in your Python IDE or in command line "python train.py", and select running mode as "temporal", "spatio-temporal" or "event". For temporal and event-based scenario generation, we provide example datasets with 5-minute time resolution, while for spatio-temporal scenario generation, a dataset to generate 24-site 1-day scenarios with 1-hour resolution is applied. Once training comletes, it will generate a group of generated scenarios along with the training loss evolution.
+To run experiment, run "train.py" in your Python IDE or in command line "python train.py", and select running mode as "temporal", "spatio-temporal" or "event". For temporal and event-based scenario generation, we provide example datasets with 5-minute time resolution, while for spatio-temporal scenario generation, a dataset to generate 24-site 1-day scenarios with 1-hour resolution is applied. Once training completes, it will generate a group of generated scenarios along with the training loss evolution.
 
 ## Scenarios Evaluation
 
