@@ -1,13 +1,12 @@
 #The main training function
 #For event-based scenario generation and spatial scenario generation, implement the code with labels or 
 #reshape the imput samples to spatio-temporal samples respectively.
-#16 is the maximum value for wind capacity we use. Change to your max value here
+#16 is the maximum value for wind capacity we use. Change to the customized max value for normalized data
 #import ipdb
 import os
 import pandas as pd
 import numpy as np
-from model_wgan_orig import *
-#from model_wgan_orig import *
+from model import *
 from util import *
 from load import load_wind, load_solar, load_spatial
 from numpy import shape
@@ -17,10 +16,10 @@ import matplotlib.pyplot as plt
 n_epochs = 70 #Number of overall training epochs on training data
 learning_rate = 0.0002 
 batch_size = 32
-image_shape = [24,24,1]
+image_shape = [24,24,1] #The shape for input data
 dim_z = 100 #input dimension for samples
-dim_W1 = 1024 #first layer
-dim_W2 = 128 #second layer
+dim_W1 = 1024 #first layer neurons
+dim_W2 = 128 #second layer neurons
 dim_W3 = 64 #third layer#16 is the maximum value for wind capacity we use. Change to your max value here
 dim_channel = 1 #reserved for future use if multi=channels
 mu, sigma = 0, 0.1 # input Gaussian
