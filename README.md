@@ -55,4 +55,4 @@ b) Check scenarios' statistical properties, and compare the results with histori
 
 ## Questions?
 
-Please email [me](http://blogs.uw.edu/yizechen/) at yizechen@uw.edu if you have any questions!
+Please email [me](http://blogs.uw.edu/yizechen/) at yizechen@uw.edu if you have any code questions!
