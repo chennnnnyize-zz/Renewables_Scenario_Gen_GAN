@@ -3,7 +3,7 @@
 This repository contains source code necessary to reproduce the results presented in the following paper:
 
 [Model-Free Renewables Scenario Generation Using Generative Adversarial Networks](https://arxiv.org/abs/1707.09676)
-by Yize Chen, Yishen Wang, Daniel Kirschen and Baosen Zhang, submitted to IEEE Transaction on Power Systems, Special Section on Enabling very high penetration renewable energy integration into future power systems 
+by Yize Chen, Yishen Wang, Daniel Kirschen and Baosen Zhang, accepted to IEEE Transaction on Power Systems, Special Section on Enabling very high penetration renewable energy integration into future power systems 
 
 The method shown in this repository can be used for general scenario-generation problems in power systems. 
 
