@@ -23,7 +23,7 @@ def load_wind():
     print("Maximum value of wind", m)
     print(shape(rows))
     for x in range(rows.shape[1]):
-        train = rows[:, x].reshape(-1, 576)
+        train = rows[:-288, x].reshape(-1, 576)
         train = train / 16
 
         # print(shape(train))
@@ -31,13 +31,12 @@ def load_wind():
             trX = train
         else:
             trX = np.concatenate((trX, train), axis=0)
-    print("Shape TrX", shape(trX))conditional
+    print("Shape TrX", shape(trX))
 
     with open('datasets/wind label.csv', 'r') as csvfile:
         reader = csv.reader(csvfile)
         rows = [row for row in reader]
     label = np.array(rows, dtype=int)
-    label=label.T
     print("Label shape", shape(label))
     return trX, label
 
