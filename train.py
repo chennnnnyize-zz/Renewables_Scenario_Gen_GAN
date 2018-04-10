@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 from model import *
 from util import *
-from load import load_wind, load_solar, load_spatial
+from load import load_wind, load_solar_data, load_wind_data_spatial #Change the data source for other tasks
 from numpy import shape
 import csv
 import matplotlib.pyplot as plt
@@ -67,7 +67,7 @@ Z_tf_sample, Y_tf_sample, image_tf_sample = dcgan_model.samples_generator(batch_
 tf.initialize_all_variables().run()
 
 Zs = np.random.normal(mu, sigma, size=[batch_size, dim_z]).astype(np.float32)
-Y_np_sample = OneHot(np.random.randint(trY.shape[1]-1, size=[visualize_dim]), n=events_num)
+Y_np_sample = OneHot(np.random.randint(events_num, size=[visualize_dim]), n=events_num)
 iterations = 0
 k = 4 #control the balance of training D and G
 
@@ -109,10 +109,10 @@ for epoch in range(n_epochs):
                         })
             discrim_loss_val, p_real_val, p_gen_val = sess.run([d_cost_tf,p_real,p_gen], feed_dict={Z_tf:Zs, image_tf:Xs, Y_tf:Ys})
 
-            print("=========== updating G ==========")
+            '''print("=========== updating G ==========")
             print("iteration:", iterations)
             print("gen loss:", gen_loss_val)
-            print("discrim loss:", discrim_loss_val)
+            print("discrim loss:", discrim_loss_val)'''
 
         else:
             _, discrim_loss_val = sess.run(
@@ -123,10 +123,10 @@ for epoch in range(n_epochs):
                         image_tf:Xs
                         })
 
-            print("=========== updating D ==========")
+            '''print("=========== updating D ==========")
             print("iteration:", iterations)
             print("gen loss:", gen_loss_val)
-            print("discrim loss:", discrim_loss_val)
+            print("discrim loss:", discrim_loss_val)'''
 
             gen_loss_val, p_real_val, p_gen_val = sess.run([g_cost_tf, p_real, p_gen],
                                                        feed_dict={Z_tf: Zs, image_tf: Xs, Y_tf: Ys})
@@ -137,8 +137,7 @@ for epoch in range(n_epochs):
         discrim_loss.append(discrim_loss_val)
 
 
-
-        if np.mod(iterations, 5000) == 0:
+        if np.mod(iterations, 1000) == 0:
             print("iterations ", iterations)
             print("Average P(real)=", p_real_val.mean())
             print("Average P(gen)=", p_gen_val.mean())
