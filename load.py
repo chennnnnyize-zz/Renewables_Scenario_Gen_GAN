@@ -13,7 +13,7 @@ import os
 def load_wind():
     #Example dataset created for evnet_based GANs wind scenarios generation
     # Data from NREL wind integrated datasets
-    with open('wind.csv', 'r') as csvfile:
+    with open('datasets/wind.csv', 'r') as csvfile:
         reader = csv.reader(csvfile)
         rows = [row for row in reader]
     rows = np.array(rows, dtype=float)
@@ -33,7 +33,7 @@ def load_wind():
             trX = np.concatenate((trX, train), axis=0)
     print("Shape TrX", shape(trX))conditional
 
-    with open('wind label.csv', 'r') as csvfile:
+    with open('datasets/wind label.csv', 'r') as csvfile:
         reader = csv.reader(csvfile)
         rows = [row for row in reader]
     label = np.array(rows, dtype=int)
@@ -43,7 +43,7 @@ def load_wind():
 
 
 def load_wind_data_spatial():
-    with open('spatial.csv', 'r') as csvfile:
+    with open('datasets/spatial.csv', 'r') as csvfile:
         reader = csv.reader(csvfile)
         rows = [row for row in reader]
     rows = np.array(rows, dtype=float)
@@ -54,13 +54,13 @@ def load_wind_data_spatial():
 
 
 def load_solar_data():
-    with open('solar label.csv', 'r') as csvfile:
+    with open('datasets/solar label.csv', 'r') as csvfile:
         reader = csv.reader(csvfile)
         rows = [row for row in reader]
     labels = np.array(rows, dtype=int)
     print(shape(labels))
 
-    with open('solar.csv', 'r') as csvfile:
+    with open('datasets/solar.csv', 'r') as csvfile:
         reader = csv.reader(csvfile)
         rows = [row for row in reader]
     rows = np.array(rows, dtype=float)
