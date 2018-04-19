@@ -28,7 +28,7 @@ To run the code, you need installing the standard packages of numpy, pandas, ipd
 
 ## Run Experiments with Pre-Processed Datasets
 
-Datasets: To reproduce the results shown in paper, we also updated the three datasets, which corresponding to wind scenario generation, solar scenario generation and wind spatio-temporal scenario generation. Labels are added to each training sample by given events (e.g., wind'sample's mean value, solar sample's month). All datasets in these paper are produced from [NREL Wind Integration Datasets](https://www.nrel.gov/grid/wind-integration-data.html) and [NREL Solar Integration Datasets](https://www.nrel.gov/grid/solar-power-data.html).
+Datasets: To reproduce the results shown in paper, we also updated the three datasets, which corresponding to wind scenario generation, solar scenario generation and wind spatio-temporal scenario generation. Labels are added to each training sample by given events (e.g., wind'sample's mean value, solar sample's month). All datasets in these paper are produced and processed from [NREL Wind Integration Datasets](https://www.nrel.gov/grid/wind-integration-data.html) and [NREL Solar Integration Datasets](https://www.nrel.gov/grid/solar-power-data.html). The labels are based on the power generation degrees.
 
 Run the experiments: 
 Please downloads all the .py files in a same folder, and experimental data in a folder "dataset" under the same parent folder.
@@ -58,4 +58,4 @@ b) Check scenarios' statistical properties, and compare the results with histori
 
 ## Questions?
 
-Please email [me](http://blogs.uw.edu/yizechen/) at yizechen@uw.edu if you have any code questions!
+Please email [me](http://blogs.uw.edu/yizechen/) at yizechen@uw.edu if you have any code or implemenration questions!
