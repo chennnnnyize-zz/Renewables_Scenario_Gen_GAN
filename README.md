@@ -56,6 +56,9 @@ a) Check the loss function, which is the metric we used during training. A conve
 
 b) Check scenarios' statistical properties, and compare the results with historical records.
 
+
+## Code References
+We thank https://github.com/carpedm20/DCGAN-tensorflow for contributing the initial version of tensorflow convolutional GAN module; https://github.com/igul222/improved_wgan_training for Wasserstein GAN examples.
 ## Questions?
 
 Please email [me](http://blogs.uw.edu/yizechen/) at yizechen@uw.edu if you have any code or implemenration questions!
