@@ -63,9 +63,9 @@ def load_solar_data():
         reader = csv.reader(csvfile)
         rows = [row for row in reader]
     rows = np.array(rows, dtype=float)
-    rows=rows[:104832,:]
+    rows=rows[:104832,:] #Change to the time points in your own dataset
     print(shape(rows))
-    trX = np.reshape(rows.T,(-1,576))
+    trX = np.reshape(rows.T,(-1,576)) #Corresponds to the GAN input dimensions.
     print(shape(trX))
     m = np.ndarray.max(rows)
     print("maximum value of solar power", m)
